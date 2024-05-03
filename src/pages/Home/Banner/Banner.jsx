@@ -8,7 +8,7 @@ import img4 from "../../../assets/images/banner/4.jpg";
 
 const Banner = () => {
   return (
-    <div className="carousel w-full h-[600px]">
+    <div className="carousel w-full h-[700px]">
       <div id="slide1" className="carousel-item relative w-full ">
         <img src={img1} className="w-full rounded-xl" />
         <div className="absolute w-full flex items-center h-full bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0.00)]  rounded-xl">
@@ -41,7 +41,7 @@ const Banner = () => {
         </div>
       </div>
       <div id="slide2" className="carousel-item relative w-full">
-        <img src={img2} className=" rounded-xl" />
+        <img src={img2} className="w-full rounded-xl" />
         <div className="absolute w-full flex items-center h-full bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0.00)]  rounded-xl">
           <div className="text-white space-y-7 pl-12 w-1/2">
             <h2 className="text-6xl font-bold">

@@ -1,5 +1,6 @@
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 const ServicesCard = ({ services }) => {
   const { title, img, price } = services;
@@ -19,6 +20,10 @@ const ServicesCard = ({ services }) => {
       </div>
     </div>
   );
+};
+
+ServicesCard.propTypes = {
+  services: PropTypes.object,
 };
 
 export default ServicesCard;

@@ -28,8 +28,13 @@ const Services = () => {
           <ServicesCard key={services._id} services={services}></ServicesCard>
         ))}
       </div>
-      <div className="w-full border flex items-center mt10">
-        <button className="btn btn-outline btn-error">More Services</button>
+      <div
+        className="w-full 
+      flex justify-center items-center pt-10"
+      >
+        <button className="btn btn-outline btn-error mx-auto">
+          More Services
+        </button>
       </div>
     </div>
   );

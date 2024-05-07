@@ -5,21 +5,23 @@ import { FcGoogle } from "react-icons/fc";
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 
-const Login = () => {
-  const { signIn } = useContext(AuthContext);
-  const handleLogin = (e) => {
+const SignUp = () => {
+  const { createUser } = useContext(AuthContext);
+
+  const handleSignUp = (e) => {
     e.preventDefault();
     const form = e.target;
+    const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email, password);
+    console.log(name, email, password);
 
-    signIn(email, password)
+    createUser(email, password)
       .then((result) => {
         console.log(result.user);
       })
       .catch((error) => {
-        console.error(error);
+        console.log(error);
       });
   };
   return (
@@ -29,8 +31,20 @@ const Login = () => {
           <img src={loginImg} alt="" />
         </div>
         <div className="card md:w-1/2 p-16 border border-gray-300">
-          <h1 className="text-4xl text-center font-bold">Login</h1>
-          <form onSubmit={handleLogin}>
+          <h1 className="text-4xl text-center font-bold">Sign Up</h1>
+          <form onSubmit={handleSignUp}>
+            <div className=" form-control mb-7">
+              <label className="label">
+                <span className="text-lg font-semibold">Name</span>
+              </label>
+              <input
+                type="text"
+                name="name"
+                placeholder="Name"
+                className="input input-bordered"
+                required
+              />
+            </div>
             <div className=" form-control mb-7">
               <label className="label">
                 <span className="text-lg font-semibold">Email</span>
@@ -57,7 +71,7 @@ const Login = () => {
             </div>
             <div className="form-control mt-6">
               <button className="btn bg-red-500 text-white text-lg font-medium">
-                Login
+                Sign Up
               </button>
             </div>
 
@@ -79,14 +93,14 @@ const Login = () => {
             </div>
           </form>
           <p className="text-center mt-10">
-            New to Car Doctor?
+            Already Have an account?
             <Link
-              to={"/signUp"}
+              to={"/login"}
               className="text-red-500 font-bold ml-2
-
-            "
+  
+              "
             >
-              Sign Up
+              Login
             </Link>
           </p>
         </div>
@@ -95,4 +109,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default SignUp;
